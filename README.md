@@ -1,3 +1,32 @@
+# Workout Tracker
+## TOC
+[Description](#description)
+[Screenshot](#screenshot)
+[Collaboratives](#collaboratives)
+## Description
+This app allows the user to log in their workout for the week and they will be able to visualize their progress through graphs: Line, Pie, and Bar. The duration, the weight lifted, which exercise was performed in the last seven days. The workout tracker used node.js, mongoDB, mongoose, and  express. Front-end code was provided by Trilogy, some of it was manipulated.)
+## Screenshot
+![screenshot](public/assets/img/fitness-1.png)
+![screenshot](public/assets/img/fitness-2.png)
+![screenshot](public/assets/img/fitness-4_cardio.png) 
+## Collaboratives
+Luna Shuqair https://github.com/LShuqair
+Menuka Gusain https://github.com/Menuka786
+## Technologies
+MongoDB, Express, Node.js, Mongoose, Heroku, HTML, CSS, JS, Routes, Models, Server.js
+## Links
+https://arcane-caverns-33278.herokuapp.com/?id=6052ac1240360d0015f6a8a7
+https://github.com/ikra-rafi/workout-tracker
+## Contact Information
+Ikra Rafi iar296@gmail.com
+
+
+
+
+
+
+
+
 # Unit 17 NoSQL Homework: Workout Tracker
 
 For this assignment, you'll create a workout tracker. You have already been provided with the front end code in the `Develop` folder. This assignment will require you to create Mongo database with a Mongoose schema and handle routes with Express.
