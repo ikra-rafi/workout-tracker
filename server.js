@@ -1,32 +1,33 @@
-// Dependencies
+// Dependencies and packages
 const express = require("express");
-const morgan = require("morgan");
+const logger = require("morgan");
 const mongoose = require("mongoose");
 const path = require("path");
 
-// Setting up Express App
+// Setting up Express App ans setting up port
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
-app.use(morgan("dev"));
 
-// Sets up the Express app to handle data parsing
+// Sets up the Express app to handle data parsing. Configuring middleware
+app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
-// db mongo
+// Connecting to db mongo
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/workout";
 mongoose.connect(MONGODB_URI, {
     useNewUrlParser: true,
     useFindAndModify: false
 })
 
-// Creating Routes
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+// Creating and importing routes
+require("./routes/apiroutes")(app);
+require("./routes/htmlroutes")(app);
 
 // Starts the server to begin listening
-app.listen(PORT, function(){
+app.listen(PORT, () => {
     console.log(`App listening on Port ${PORT}!`);
 });

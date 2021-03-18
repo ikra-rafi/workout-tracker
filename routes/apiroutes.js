@@ -1,4 +1,5 @@
-const Workout = require("../models/workout.js")
+const Workout = require("../models/workout")
+
 
 module.exports = function (app) {
 
@@ -21,6 +22,7 @@ module.exports = function (app) {
             })
     });
 
+    // Put request to update exercise information in a specific routine using parm.id
     app.put("/api/workouts/:id", ({ body, params }, res) => {
         Workout.findByIdAndUpdate(
             params.id,

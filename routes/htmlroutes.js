@@ -1,16 +1,17 @@
-var path = require("path");
+const express = require('express');
+const path = require("path");
 
-module.exports = function (app){
-    
-    app.get("/exercise", function (req,res){
+module.exports = app => {
+// Get request which sends exercise.html to browser when '/exercise' endpoint is hit    
+    app.get("/exercise", (req, res) => {
         res.sendFile(path.join(__dirname, "../public/exercise.html"));
     });
-
-    app.get("/", function(req,res){
+// Get request which sends index.html to browser when '/' endpoint is hit
+    app.get("/", (req, res) => {
         res.sendFile(path.join(__dirname, "../public/index.html"));
     });
-
-    app.get("/stats", function(req, res){
+// Get request which sends stats.html to browser when '/stats' endpoint is hit
+    app.get("/stats", (req, res) => {
         res.sendFile(path.join(__dirname, "../public/stats.html"));
     });
 
