@@ -4,7 +4,7 @@ const logger = require("morgan");
 const mongoose = require("mongoose");
 const path = require("path");
 
-// Setting up Express App ans setting up port
+// Setting up Express App and setting up port
 const app = express();
 const PORT = process.env.PORT || 8080;
 
@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.static('public'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Connecting to db mongo
+// Connecting to db mongoDB
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/workout";
 mongoose.connect(MONGODB_URI, {
     useNewUrlParser: true,
@@ -25,11 +25,11 @@ mongoose.connect(MONGODB_URI, {
     useFindAndModify: false
 })
 
-// Creating and importing routes
+// Creating and importing api and html routes
 require("./routes/apiroutes")(app);
 require("./routes/htmlroutes")(app);
 
-// Starts the server to begin listening
+// Starts the server to begin listening on the specified port
 app.listen(PORT, () => {
     console.log(`App listening on Port ${PORT}!`);
 });
